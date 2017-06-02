@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <string>
 #include "ring.h"
 using namespace std;
 

@@ -10,6 +10,8 @@
 
 #include <string>
 #include <cstdint>
+#include <memory>
+
 using namespace std;
 
 namespace caveofprogramming {
