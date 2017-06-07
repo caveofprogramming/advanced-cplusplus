@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <vector>
+#include <string> 
+
 using namespace std;
 
 int main() {
@@ -18,14 +20,19 @@ int main() {
 	strings.push_back("two");
 	strings.push_back("three");
 
+	cout << "For loop: " << endl;
 	for(int i=0; i<strings.size(); i++) {
 		cout << strings[i] << endl;
 	}
+	cout << endl;
 
-	for(vector<string>::iterator it = strings.begin(); it != strings.end(); it++) {
+	cout << "Iterator loop: " << endl;
+	for(auto it = strings.begin(); it != strings.end(); ++it) {
 		cout << *it << endl;
 	}
+	cout << endl;
 
+	cout << "Single item." << endl;
 	vector<string>::iterator it = strings.begin();
 	it += 2;
 
