@@ -3,4 +3,5 @@
 **/Makefile
 **/cmake_install.cmake
 **/*.bmp
+**/bin/**
 
