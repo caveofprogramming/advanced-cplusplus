@@ -9,6 +9,7 @@
 #include <iostream>
 #include <cstdint>
 #include <memory>
+#include <cmath>
 #include "Mandelbrot.h"
 #include "Bitmap.h"
 #include "ZoomList.h"

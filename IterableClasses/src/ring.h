@@ -24,32 +24,31 @@ public:
 	class iterator;
 
 public:
-	ring(int size): m_pos(0), m_size(size), m_values(NULL) {
+	ring(int size) :
+			m_pos(0), m_size(size), m_values(nullptr) {
 		m_values = new T[size];
 	}
 
 	~ring() {
-		delete [] m_values;
+		delete[] m_values;
 	}
 
 	int size() {
 		return m_size;
 	}
 
-	iterator begin()
-	{
+	iterator begin() {
 		return iterator(0, *this);
 	}
 
-	iterator end()
-	{
+	iterator end() {
 		return iterator(m_size, *this);
 	}
 
 	void add(T value) {
 		m_values[m_pos++] = value;
 
-		if(m_pos == m_size) {
+		if (m_pos == m_size) {
 			m_pos = 0;
 		}
 	}
@@ -65,24 +64,31 @@ private:
 	int m_pos;
 	ring &m_ring;
 public:
-	iterator(int pos, ring &ring_ref)
-		: m_pos(pos), m_ring(ring_ref)
-	{
-		
+	iterator(int pos, ring &ring_ref) :
+			m_pos(pos), m_ring(ring_ref) {
+
 	}
 
 	//Post fix
-	iterator& operator++(int) {
-		m_pos++;
-		return *this;
+	/*
+	 * This differs from what's in at least the original
+	 * version of the tutorial video. Really we should
+	 * return a version of the iterator as it was
+	 * before it was modified, for consistency with
+	 * the usual behaviour of the postfix operator.
+	 */
+	iterator operator++(int) {
+
+		iterator old = *this;
+		++(*this);
+		return old;
 	}
 
 	//prefix
 	iterator& operator++() {
-		ring temp(*this);
 		++m_pos;
 
-		return temp;
+		return *this;
 	}
 
 	T& operator*() {
@@ -97,8 +103,6 @@ public:
 		return !(*this == other);
 	}
 
-
 };
-
 
 #endif /* RING_H_ */

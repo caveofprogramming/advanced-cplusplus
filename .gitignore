@@ -2,4 +2,5 @@
 **/CMakeFiles/**
 **/Makefile
 **/cmake_install.cmake
+**/*.bmp
 
