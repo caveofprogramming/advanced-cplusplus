@@ -12,9 +12,9 @@
 
 using namespace std;
 
-#pragma pack(2)
-
 namespace caveofprogramming {
+
+#pragma pack(push, 2)
 
 struct BitmapFileHeader {
 	char header[2] { 'B', 'M' };
@@ -22,6 +22,8 @@ struct BitmapFileHeader {
 	int32_t reserved { 0 };
 	int32_t dataOffset;
 };
+
+#pragma pack(pop)
 
 }
 
