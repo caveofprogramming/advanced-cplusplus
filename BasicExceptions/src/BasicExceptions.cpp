@@ -39,7 +39,7 @@ int main() {
 	catch(int e) {
 		cout << "Error code: " << e << endl;
 	}
-	catch(char const * e) {
+	catch(char const * e) {  // recomend catch by reference 
 		cout << "Error message: " << e << endl;
 	}
 	catch(string &e) {
